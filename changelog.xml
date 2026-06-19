@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelogs>
-
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
+        <version>1.1.0</version>
+        <addition>
+            <item>Added Joomla Content Source support alongside traditional RSS feeds</item>
+            <item>Added Source Type selector with RSS Feeds and Joomla Content modes</item>
+            <item>Added Joomla Latest Articles source mode</item>
+            <item>Added Joomla Featured Articles source mode</item>
+            <item>Added Joomla Categories source mode</item>
+            <item>Added Joomla Selected Articles source mode</item>
+            <item>Added Joomla Category Picker with search and pagination support</item>
+            <item>Added Joomla Article Picker with search and pagination support</item>
+            <item>Added Joomla Content JSON cache generation</item>
+            <item>Added Joomla Content support for iframe and JavaScript embeds</item>
+        </addition>
+        <fix>
+            <item>Fixed content selection workflows for large Joomla websites by replacing manual ID entry requirements</item>
+            <item>Fixed administrator usability issues when selecting Joomla content sources</item>
+        </fix>
+        <change>
+            <item>Expanded DevArt RSS Widgets beyond RSS aggregation to support local Joomla content publishing</item>
+            <item>Improved content syndication capabilities for publishers and multi-site Joomla environments</item>
+            <item>Maintained full compatibility with existing RSS widget architecture and rendering systems</item>
+        </change>
+        <note>
+            <item>No database migration required</item>
+            <item>Existing RSS widgets remain fully compatible</item>
+            <item>Existing iframe and JavaScript embeds continue to function normally</item>
+            <item>Safe upgrade from all previous 1.0.x releases</item>
+        </note>
+    </changelog>
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
         <version>1.0.1</version>
-
         <addition>
             <item>Added Embed Height Mode with Auto Height and Fixed Height options</item>
             <item>Added automatic iframe height detection for embedded widgets</item>
             <item>Added automatic JavaScript embed height detection for responsive external websites</item>
             <item>Added responsive embed resizing support across desktop, tablet and mobile devices</item>
         </addition>
-
         <fix>
             <item>Fixed situations where embedded widgets could require manual height adjustments</item>
             <item>Fixed responsive rendering inconsistencies for embedded widgets on different screen sizes</item>
             <item>Fixed iframe and JavaScript embed height handling for variable content lengths</item>
         </fix>
-
         <change>
             <item>Improved external widget rendering on responsive websites</item>
             <item>Improved iframe embed usability through automatic height calculation</item>
             <item>Improved JavaScript embed integration for third-party websites</item>
-            <item>Improved embedded widget presentation when item counts vary</item>
             <item>Fallback Iframe Height is now used as a fallback value when automatic sizing is unavailable</item>
         </change>
-
         <note>
             <item>No database schema changes introduced</item>
             <item>No migration required</item>
@@ -35,12 +61,10 @@
             <item>Recommended update for all installations using iframe or JavaScript embeds</item>
         </note>
     </changelog>
-
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
         <version>1.0.0</version>
-
         <addition>
             <item>Added full Joomla 6 native DevArt RSS Widgets package</item>
             <item>Added administrator component for creating and managing RSS widgets</item>
@@ -58,57 +82,37 @@
             <item>Added local image cache support</item>
             <item>Added image resize, recompression and WEBP conversion support</item>
             <item>Added configurable image cache retention settings</item>
-            <item>Added Auto, Local and Source image source modes</item>
             <item>Added iframe embed output for external websites</item>
             <item>Added JavaScript embed output for external websites</item>
-            <item>Added script preview support for embed testing</item>
             <item>Added global domain access policy for embedded widgets</item>
-            <item>Added per-widget domain override controls</item>
             <item>Added domain usage registry for embedded widgets</item>
-            <item>Added embed-only banner support below embedded widgets</item>
             <item>Added analytics foundation for embedded widgets</item>
             <item>Added Google Analytics 4 event support for iframe and JavaScript embeds</item>
             <item>Added built-in analytics consent panel for embedded widgets</item>
             <item>Added permanent Privacy recall link for changing analytics consent</item>
-            <item>Added optional Privacy Policy URL support in the consent panel</item>
             <item>Added import and export tools for portable widget configuration</item>
             <item>Added GitHub-based Joomla update server support</item>
         </addition>
-
         <change>
             <item>RSS widget architecture designed specifically for Joomla 6 and PHP 8.2+</item>
             <item>Frontend rendering optimized for high-traffic editorial and news websites</item>
-            <item>External embed rendering designed for iframe and JavaScript distribution to other websites</item>
             <item>Static JSON cache architecture used to reduce database and RSS feed load</item>
             <item>Cloudflare and CDN-friendly rendering strategy implemented for production use</item>
             <item>Analytics tracking limited to iframe and JavaScript embeds and not applied to internal Joomla module rendering</item>
-            <item>Template settings organized with conditional show/hide logic for simpler administration</item>
-            <item>Import and export logic excludes cache files, image cache files, runtime status and fetch diagnostics</item>
-            <item>Dashboard includes Cloudflare cache guidance for external embed endpoints</item>
-            <item>Administrator interface optimized for managing widgets, feeds, embeds and cache state from one component</item>
         </change>
-
         <security>
             <item>Added ACL enforcement for administrator operations</item>
             <item>Added CSRF protection for administrator actions</item>
             <item>Added RSS feed URL validation and SSRF protection</item>
             <item>Added domain allow and block policy controls for external embeds</item>
             <item>Added safe output escaping for frontend and embed rendering</item>
-            <item>Added controlled image download limits and processing safeguards</item>
-            <item>Added protected cache directory handling</item>
             <item>Added GDPR-oriented consent controls for analytics in embedded widgets</item>
-            <item>Added consent withdrawal support through the permanent Privacy recall link</item>
-            <item>Added import validation and portable settings filtering</item>
         </security>
-
         <note>
             <item>Initial public production release of DevArt RSS Widgets for Joomla 6</item>
-            <item>Designed for publishers, news portals, magazines, media groups and high-traffic Joomla websites</item>
-            <item>Main focus is creating RSS widgets that can be displayed inside Joomla or embedded on external websites</item>
             <item>Built for Joomla 6 only with PHP 8.2+</item>
             <item>No migration required for new installations</item>
             <item>Always test on a staging environment before production deployment</item>
         </note>
     </changelog>
-
 </changelogs>
