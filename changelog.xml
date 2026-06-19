@@ -4,6 +4,41 @@
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
+        <version>1.0.1</version>
+
+        <addition>
+            <item>Added Embed Height Mode with Auto Height and Fixed Height options</item>
+            <item>Added automatic iframe height detection for embedded widgets</item>
+            <item>Added automatic JavaScript embed height detection for responsive external websites</item>
+            <item>Added responsive embed resizing support across desktop, tablet and mobile devices</item>
+        </addition>
+
+        <fix>
+            <item>Fixed situations where embedded widgets could require manual height adjustments</item>
+            <item>Fixed responsive rendering inconsistencies for embedded widgets on different screen sizes</item>
+            <item>Fixed iframe and JavaScript embed height handling for variable content lengths</item>
+        </fix>
+
+        <change>
+            <item>Improved external widget rendering on responsive websites</item>
+            <item>Improved iframe embed usability through automatic height calculation</item>
+            <item>Improved JavaScript embed integration for third-party websites</item>
+            <item>Improved embedded widget presentation when item counts vary</item>
+            <item>Fallback Iframe Height is now used as a fallback value when automatic sizing is unavailable</item>
+        </change>
+
+        <note>
+            <item>No database schema changes introduced</item>
+            <item>No migration required</item>
+            <item>Existing widgets remain fully compatible</item>
+            <item>Safe update from v1.0.0</item>
+            <item>Recommended update for all installations using iframe or JavaScript embeds</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
         <version>1.0.0</version>
 
         <addition>
