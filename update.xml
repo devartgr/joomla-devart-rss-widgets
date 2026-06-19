@@ -3,7 +3,7 @@
     <update>
         <name>DevArt RSS Widgets</name>
         <description>DevArt RSS Widgets for Joomla</description>
-        <element>pkg_devartrsswidgets</element>
+        <element>com_devartrsswidgets</element>
         <type>package</type>
         <version>1.0.1</version>
 
