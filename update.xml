@@ -5,15 +5,15 @@
         <description>DevArt RSS Widgets for Joomla</description>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
 
         <infourl title="DevArt RSS Widgets">https://github.com/devartgr/joomla-devart-rss-widgets</infourl>
 
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-rss-widgets/releases/download/v1.0.0/pkg_devartrsswidgets_v1.0.0.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-rss-widgets/releases/download/v1.0.1/pkg_devartrsswidgets_v1.0.1.zip</downloadurl>
         </downloads>
 
-        <sha256>fcf5d0b53dc259ba4d3541a109fbefcac0a86a7763806c54ed10d93571118c7c</sha256>
+        <sha256>c97a82f4c18165f6e826aeb4f159824059aac54e73d6c6d92ad7469b1cb9435a</sha256>
 
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-rss-widgets/main/changelog.xml</changelogurl>
 
