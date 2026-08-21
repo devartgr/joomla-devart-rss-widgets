@@ -3,8 +3,8 @@
 Professional RSS and Joomla Content widget platform for Joomla 6, designed for publishers, newspapers, magazines, portals, municipalities, organizations and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.0-orange)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
+![Release](https://img.shields.io/badge/Version-1.2.0-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -217,17 +217,18 @@ https://raw.githubusercontent.com/devartgr/joomla-devart-rss-widgets/main/update
 
 This package installs:
 
-- com_devart_rss_widgets
-- mod_devart_rss_widget
-- plg_content_devart_rss_widgets
-- plg_task_devart_rss_widgets
+- `com_devart_rss_widgets`
+- `mod_devartrsswidget`
+- `plg_content_devartrsswidgets`
+- `plg_task_devartrsswidgets`
 
 ---
 
 ## Requirements
 
 - Joomla 6.x
-- PHP 8.2+
+- PHP 8.3.0+
+- PHP cURL extension
 
 ---
 
@@ -262,10 +263,10 @@ Suitable for:
 - Joomla ACL support
 - CSRF protection
 - RSS feed validation
-- SSRF protection
-- Domain access controls
+- SSRF protection with cURL IP pinning
+- Domain access controls for embeds
 - Safe output escaping
-- Protected cache handling
+- Protected cache handling and artifact revocation
 - GDPR-oriented analytics controls
 - Import validation
 - Joomla native architecture
@@ -277,8 +278,9 @@ Suitable for:
 Supported:
 
 - Joomla 6.x
-- PHP 8.2+
-- Joomla native updates
+- PHP 8.3.0+
+- PHP cURL
+- Joomla native package updates (`pkg_devartrsswidgets`)
 - Modern Joomla MVC architecture
 
 Not Supported:
@@ -292,37 +294,45 @@ Not Supported:
 
 ## Current Version
 
-1.1.0
+1.2.0
 
 ---
 
-## What's New in 1.1.0
+## Version 1.2.0
 
-### Added
+DevArt RSS Widgets **1.2.0** is the current **public** release.
 
-- Joomla Content Source support
-- Latest Articles source mode
-- Featured Articles source mode
-- Categories source mode
-- Selected Articles source mode
-- Joomla Category Picker
-- Joomla Article Picker
-- Joomla Content cache generation
-- Joomla Content iframe embeds
-- Joomla Content JavaScript embeds
+### Highlights in 1.2.0
 
-### Improved
+- Hardened remote feed and image fetching (redirects, IP pinning, cURL required)
+- Hardened public embeds, domain registry caps and cache privacy headers
+- Hardened public cache lifecycle and Joomla Content guest ACL filtering
+- Shared fetch coordinator with fail-closed `fetch_mode` and safer scheduling
+- Packaged languages: el-GR, fr-FR, de-DE, es-ES, it-IT, pt-PT
+- Package-only Joomla update channel (`pkg_devartrsswidgets`)
+- Joomla 6.0+ / PHP 8.3.0+ only
 
-- Content syndication capabilities
-- Multi-site publishing workflows
-- Administrator content selection workflow
-- External widget creation workflow
+### Highlights since 1.1.0 (included in 1.2.0)
+
+- Intermediate private builds 1.1.1–1.1.9 were not published separately
+- Network boundary, public data boundary, embed boundary and fetch coordination security work
+- Module layout wiring via Joomla `ModuleHelper`
+- Media path sanitization and residual audit hardening
 
 ### Compatibility
 
-- Existing RSS widgets remain fully compatible
+- Existing RSS and Joomla Content widgets remain fully compatible
 - Existing embeds continue to function
 - Existing scheduler and cron workflows remain valid
+- No database migration required from 1.1.0
+
+### Security Highlights (expanded)
+
+- Fail closed without PHP cURL
+- SSRF hardening for remote fetches
+- Image decode budgets before GD
+- Embed domain policy / registry gating
+- Public cache artifact revocation on unpublish/delete
 
 ---
 

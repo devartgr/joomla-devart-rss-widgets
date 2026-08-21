@@ -2,25 +2,22 @@
 <updates>
     <update>
         <name>DevArt RSS Widgets</name>
-        <description>DevArt RSS Widgets for Joomla</description>
-        <element>com_devart_rss_widgets</element>
-        <type>component</type>
-        <client>administrator</client>
-        <version>1.1.0</version>
-
+        <description>Professional RSS and Joomla Content widgets package for Joomla 6.</description>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
+        <client>site</client>
+        <version>1.2.0</version>
         <infourl title="DevArt RSS Widgets">https://github.com/devartgr/joomla-devart-rss-widgets</infourl>
-
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-rss-widgets/releases/download/v1.1.0/pkg_devartrsswidgets_v1.1.0.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-rss-widgets/releases/download/v1.2.0/pkg_devartrsswidgets_v1.2.0.zip</downloadurl>
         </downloads>
-
-        <sha256>e01bfcf27ace1c94d2bf2a887c2d6bd6de5b865240de07c2a25c111eec16532f</sha256>
-
+        <sha256>da0a0b0d3965a073d5b6617a6b6cb7c067766161c0397d4364998fe0c8070229</sha256>
+        <tags>
+            <tag>stable</tag>
+        </tags>
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-rss-widgets/main/changelog.xml</changelogurl>
-
         <targetplatform name="joomla" version="6.*" />
-        <php_minimum>8.2</php_minimum>
-
+        <php_minimum>8.3.0</php_minimum>
         <maintainer>Kostas Stathopoulos</maintainer>
         <maintainerurl>https://devart.gr</maintainerurl>
     </update>

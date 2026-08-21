@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelogs>
+
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
+        <version>1.2.0</version>
+
+        <addition>
+            <item>Added packaged language packs for el-GR, fr-FR, de-DE, es-ES, it-IT and pt-PT</item>
+            <item>Added shared EmbedBoundaryService for iframe and script embed domain checks</item>
+            <item>Added shared FetchCoordinatorService for external cron, Joomla Scheduled Task and manual Fetch Now</item>
+            <item>Added public render DTO for webroot widget JSON cache (display settings only)</item>
+        </addition>
+
+        <change>
+            <item>First public 1.2.x release since 1.1.0 (intermediate 1.1.1–1.1.9 builds were not published)</item>
+            <item>Joomla native updates target the package only (pkg_devartrsswidgets, site client)</item>
+            <item>PHP minimum aligned to 8.3.0; Joomla 6+ only; PHP cURL is required for secure remote fetch</item>
+            <item>Module uses Joomla ModuleHelper::getLayoutPath with a real tmpl/default.php renderer</item>
+            <item>Scheduled isDue checks use last_fetch to avoid retry storms on failing widgets</item>
+            <item>Removed stale lock reclaim that could break long-running per-widget flock protection</item>
+        </change>
+
+        <fix>
+            <item>Fixed unused category/article preload queries on the widget edit screen</item>
+            <item>Fixed single-widget delete to require a POST CSRF token</item>
+            <item>Fixed cron token generator to use random_bytes server fallback instead of Math.random</item>
+            <item>Fixed stored media path and local media URL sanitization against traversal and unsafe characters</item>
+        </fix>
+
+        <security>
+            <item>Hardened remote feed and image fetching: manual redirects, per-hop validation, public-IP resolution and cURL IP pinning</item>
+            <item>Fail closed when PHP cURL is missing; removed insecure file_get_contents stream fetch fallback</item>
+            <item>Hardened image processing with pre-decode pixel and memory budgets before GD</item>
+            <item>Hardened public embeds: registry after embed_enabled checks, domain registry caps and retention, private/no-store iframe cache when policy or registry can vary the response</item>
+            <item>Hardened public cache lifecycle: unpublish/delete revoke artifacts; RendererService requires published widgets</item>
+            <item>Hardened Joomla Content fetch with guest ACL, published categories and multilanguage filtering</item>
+            <item>Enforced fetch_mode fail-closed between external cron and Joomla Scheduled Task callers</item>
+        </security>
+
+        <note>
+            <item>Public release replacing the previous public line at 1.1.0</item>
+            <item>No database schema migration required from 1.1.0</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+ with the cURL extension</item>
+            <item>Existing RSS and Joomla Content widgets remain compatible</item>
+            <item>Existing iframe and JavaScript embeds continue to function</item>
+            <item>Recommended update for all DevArt RSS Widgets installations</item>
+        </note>
+    </changelog>
+
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
@@ -32,6 +81,7 @@
             <item>Safe upgrade from all previous 1.0.x releases</item>
         </note>
     </changelog>
+
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
@@ -61,6 +111,7 @@
             <item>Recommended update for all installations using iframe or JavaScript embeds</item>
         </note>
     </changelog>
+
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
@@ -115,4 +166,5 @@
             <item>Always test on a staging environment before production deployment</item>
         </note>
     </changelog>
+
 </changelogs>
