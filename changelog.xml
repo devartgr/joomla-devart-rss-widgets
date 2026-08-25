@@ -4,6 +4,33 @@
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
+        <version>1.2.1</version>
+
+        <addition>
+            <item>Added packaged language packs for cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR and zh-CN (15 languages total)</item>
+            <item>Added widgets-style hub dashboard cards for New Widget, Widgets, Settings, Modules, Domain Usage and Scheduled Tasks</item>
+            <item>Added dashboard cache status stat cards aligned with DevArt Widgets / Slider</item>
+            <item>Added bordered options groups for component Options (Fetch/Cron, Cache, Uninstall, Domain/Embeds)</item>
+        </addition>
+
+        <change>
+            <item>Dashboard layout now shows hub actions first, then Fetch/Cache status with cache maintenance buttons, then architecture and Cloudflare notes</item>
+            <item>Administrator active submenu color aligned to DevArt teal (#08a39a)</item>
+            <item>Widgets list Import UI uses a compact details/summary panel matching DevArt Widgets / Slider</item>
+            <item>Language generation and sprintf placeholder checks cover all packaged locales</item>
+        </change>
+
+        <note>
+            <item>No database schema migration required from 1.2.0</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+ with the cURL extension</item>
+            <item>Existing widgets, module, content plugin and embeds remain compatible</item>
+            <item>Recommended update for all DevArt RSS Widgets installations</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
         <version>1.2.0</version>
 
         <addition>

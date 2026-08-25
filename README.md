@@ -4,7 +4,7 @@ Professional RSS and Joomla Content widget platform for Joomla 6, designed for p
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.0-orange)
+![Release](https://img.shields.io/badge/Version-1.2.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -294,13 +294,35 @@ Not Supported:
 
 ## Current Version
 
-1.2.0
+1.2.1
+
+---
+
+## Version 1.2.1
+
+DevArt RSS Widgets **1.2.1** is the current **public** release.
+
+### Highlights in 1.2.1
+
+- Packaged languages expanded to 15: en-GB, el-GR, fr-FR, de-DE, es-ES, it-IT, pt-PT, cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, zh-CN
+- Hub dashboard cards (New Widget, Widgets, Settings, Modules, Domain Usage, Scheduled Tasks)
+- Dashboard cache status stat cards aligned with DevArt Widgets / Slider
+- Bordered Options groups (Fetch/Cron, Cache, Uninstall, Domain/Embeds)
+- Active administrator submenu color `#08a39a`
+- Widgets list Import UI matching Widgets / Slider (`details`/`summary`)
+
+### Compatibility
+
+- Existing RSS and Joomla Content widgets remain fully compatible
+- Existing embeds continue to function
+- Existing scheduler and cron workflows remain valid
+- No database migration required from 1.2.0
 
 ---
 
 ## Version 1.2.0
 
-DevArt RSS Widgets **1.2.0** is the current **public** release.
+Previous public release.
 
 ### Highlights in 1.2.0
 
