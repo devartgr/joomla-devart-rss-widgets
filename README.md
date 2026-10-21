@@ -4,7 +4,7 @@ Professional RSS and Joomla Content widget platform for Joomla 6, designed for p
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.1-orange)
+![Release](https://img.shields.io/badge/Version-1.2.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -294,13 +294,35 @@ Not Supported:
 
 ## Current Version
 
-1.2.1
+1.2.2
+
+---
+
+## Version 1.2.2
+
+DevArt RSS Widgets **1.2.2** is the current **public** release.
+
+### Highlights in 1.2.2
+
+- Atomic public cache writes and compact JSON; runtime fetch status columns (no `settings_json` clobber on fetch)
+- Image cache reuse, download caps and wall-clock fetch budgets with scheduled backoff
+- Stronger cron auth headers (`X-DevArt-Cron-Token` / Bearer); SQL due-scan on `next_fetch`
+- Broader feed parsing (RSS 1.0/RDF, `dc:date`, enclosures, Atom published/updated, XXE rejection)
+- Maintainability: SettingsSchema, Support helpers, EmbedOrchestrator, admin template partials + i18n
+- Schema update included (`sql/updates/mysql/1.2.2.sql`)
+
+### Compatibility
+
+- Existing RSS and Joomla Content widgets remain fully compatible
+- Existing embeds continue to function
+- Existing scheduler and cron workflows remain valid
+- Database schema update required from 1.2.1
 
 ---
 
 ## Version 1.2.1
 
-DevArt RSS Widgets **1.2.1** is the current **public** release.
+Previous public release.
 
 ### Highlights in 1.2.1
 
@@ -322,7 +344,7 @@ DevArt RSS Widgets **1.2.1** is the current **public** release.
 
 ## Version 1.2.0
 
-Previous public release.
+Earlier public release.
 
 ### Highlights in 1.2.0
 
@@ -333,13 +355,6 @@ Previous public release.
 - Packaged languages: el-GR, fr-FR, de-DE, es-ES, it-IT, pt-PT
 - Package-only Joomla update channel (`pkg_devartrsswidgets`)
 - Joomla 6.0+ / PHP 8.3.0+ only
-
-### Highlights since 1.1.0 (included in 1.2.0)
-
-- Intermediate private builds 1.1.1–1.1.9 were not published separately
-- Network boundary, public data boundary, embed boundary and fetch coordination security work
-- Module layout wiring via Joomla `ModuleHelper`
-- Media path sanitization and residual audit hardening
 
 ### Compatibility
 

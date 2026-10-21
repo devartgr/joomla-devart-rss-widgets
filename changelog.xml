@@ -4,6 +4,58 @@
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
+        <version>1.2.2</version>
+
+        <addition>
+            <item>Added dedicated runtime columns for fetch status, error, cache file, consecutive failures and next_fetch backoff</item>
+        </addition>
+
+        <fix>
+            <item>Fixed non-atomic public cache JSON writes when syncing display settings after widget save</item>
+            <item>Fixed undeclared feedRows dynamic property on the widget edit view (PHP 8.2+ deprecation)</item>
+            <item>Fixed scheduled/manual fetch rewriting full settings_json from a stale row snapshot (lost admin saves during fetch)</item>
+            <item>Fixed public cache rewrite after unpublish mid-fetch by re-checking published before writeCache</item>
+        </fix>
+
+        <change>
+            <item>Shared CacheWriter now performs atomic tmp+rename writes for fetch and display-settings sync</item>
+            <item>Public widget cache JSON is written compact (no JSON_PRETTY_PRINT)</item>
+            <item>FetchCoordinator reloads the widget under the per-widget lock before fetching</item>
+            <item>Automatic fetch no longer updates modified/modified_by; runtime status is stored outside settings_json</item>
+            <item>Failed scheduled fetches apply exponential next_fetch backoff; manual Fetch Now ignores backoff</item>
+            <item>Cached images are keyed by URL + image-settings signature and reused before download</item>
+            <item>New remote image downloads are capped per fetch; scheduled runs use a wall-clock time budget</item>
+            <item>embed.script uses the same private/public Cache-Control policy as the iframe embed endpoint</item>
+            <item>Frontend widget CSS/JS moved to static site.css / site.js with CSS variables (cache-safe link tags in HTML)</item>
+            <item>Frontend render no longer re-sorts cached items (order applied once at fetch)</item>
+            <item>Domain registry retention cleanup runs on scheduled fetch only, not on public embeds</item>
+            <item>Replaced deprecated Application::$input usage with getInput() / controller $this->input</item>
+            <item>Removed PHP 8.5-deprecated curl_close() and imagedestroy() calls</item>
+            <item>Replaced GLOB_BRACE image-cache cleanup with DirectoryIterator for musl/Alpine portability</item>
+            <item>Reduced manual require_once loading in favour of Joomla NamespaceMapper PSR-4 autoload (safe module fallback retained)</item>
+            <item>External cron accepts X-DevArt-Cron-Token and Authorization Bearer headers (query ?token= remains fallback); invalid tokens return HTTP 403 and are logged without IP</item>
+            <item>Feed parser: RSS 1.0/RDF, dc:date, image enclosure / Atom enclosure / content:encoded images, Atom published vs updated, reject XML ENTITY, invalid dates stay empty and sort last</item>
+            <item>Central SettingsSchema contract for save, import/export defaults, public cache keys and renderer fallbacks</item>
+            <item>Shared Support helpers for layout aliases, feed-URL detection, HTTP(S) URL/IP policy and embed domain allow/block lists</item>
+            <item>EmbedOrchestrator consolidates iframe and script embed preparation; WidgetController responsibilities split into focused admin services</item>
+            <item>Widget edit admin template split into partials; tabs/picker/core labels and frontend embed status messages use language keys</item>
+            <item>Dropped unused #__devartrsswidgets_logs table (never written by product code)</item>
+            <item>Removed unused component Options cache_lifetime field (per-widget cache_lifetime remains)</item>
+            <item>Removed duplicate admin/script.php; installer script lives only at component root</item>
+            <item>Scheduled fetch due-scan filters next_fetch and cache_lifetime in SQL and loads scan columns only (not SELECT *)</item>
+            <item>Dev-only FeedParseTest covers RSS/Atom/RDF/XXE fixtures via PHPUnit</item>
+        </change>
+
+        <note>
+            <item>Database schema update included (sql/updates/mysql/1.2.2.sql)</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+ with the cURL extension</item>
+            <item>Recommended update for all DevArt RSS Widgets installations</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
         <version>1.2.1</version>
 
         <addition>
