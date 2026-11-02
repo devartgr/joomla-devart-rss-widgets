@@ -4,7 +4,7 @@ Professional RSS and Joomla Content widget platform for Joomla 6, designed for p
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.2-orange)
+![Release](https://img.shields.io/badge/Version-1.2.3-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -294,13 +294,35 @@ Not Supported:
 
 ## Current Version
 
-1.2.2
+1.2.3
+
+---
+
+## Version 1.2.3
+
+DevArt RSS Widgets **1.2.3** is the current **public** release.
+
+### Highlights in 1.2.3
+
+- New `task=embed.frame` raw iframe endpoint (no site template) for Cloudflare-friendly public embeds
+- Strip `Set-Cookie` only on public CDN-eligible `embed.script` / `embed.frame` responses
+- UTF-8-safe title/excerpt truncation (no mid-character cuts / `�…` on Greek text)
+- Image processing skipped when PHP memory headroom is insufficient; modern `CURLOPT_PROTOCOLS_STR` when available
+- Embed Codes admin pagination; widget edit JavaScript moved to `media/js/widget-edit.js`
+- See `docs/embed-caching.md` for Cache Rules, TTL staleness and multilingual caveat
+
+### Compatibility
+
+- Existing RSS and Joomla Content widgets remain fully compatible
+- Legacy `view=embed&tmpl=component` iframe codes continue to work (new codes use `task=embed.frame`)
+- Existing scheduler and cron workflows remain valid
+- No database migration required from 1.2.2
 
 ---
 
 ## Version 1.2.2
 
-DevArt RSS Widgets **1.2.2** is the current **public** release.
+Previous public release.
 
 ### Highlights in 1.2.2
 
@@ -322,7 +344,7 @@ DevArt RSS Widgets **1.2.2** is the current **public** release.
 
 ## Version 1.2.1
 
-Previous public release.
+Earlier public release.
 
 ### Highlights in 1.2.1
 
