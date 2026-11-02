@@ -4,6 +4,37 @@
     <changelog>
         <element>pkg_devartrsswidgets</element>
         <type>package</type>
+        <version>1.2.3</version>
+
+        <fix>
+            <item>Public embed.script now returns the orchestrator HTTP status (e.g. 403 when domain policy forbids the request)</item>
+            <item>Removed dead view=embed branch from site view=widget template; direct view now requires embed_enabled</item>
+            <item>Fixed title/excerpt truncation that split multi-byte UTF-8 characters and showed replacement marks (�…) on Greek and other non-ASCII text</item>
+        </fix>
+
+        <change>
+            <item>Added task=embed.frame raw iframe endpoint (no site template) so public embeds can avoid guest Set-Cookie and be CDN-cached</item>
+            <item>New admin iframe embed codes use task=embed.frame; legacy view=embed&amp;tmpl=component remains for back-compat</item>
+            <item>Strip Set-Cookie on public CDN-eligible embed.script and embed.frame responses only (allow/block and registry stay private)</item>
+            <item>Prefer CURLOPT_PROTOCOLS_STR / CURLOPT_REDIR_PROTOCOLS_STR when available (PHP 8.3+ / modern cURL)</item>
+            <item>Skip GD image conversion when PHP memory headroom is insufficient; keep original image bytes as fallback</item>
+            <item>formatDate site timezone uses application offset without getIdentity ternary</item>
+            <item>Embed path skips redundant published DB re-check after EmbedOrchestrator already verified the widget</item>
+            <item>validate.php asserts RendererService ASSET_VERSION matches the package version</item>
+            <item>Embed Codes admin view paginates widgets (limit / previous / next), matching Widgets list behaviour</item>
+            <item>Moved widget edit form JavaScript from inline template into media/js/widget-edit.js; template keeps i18n/config bootstrap only</item>
+        </change>
+
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+ with the cURL extension</item>
+            <item>Recommended update for Cloudflare full-cache sites that embed via script or iframe</item>
+            <item>See docs/embed-caching.md for Cache Rules, TTL staleness and multilingual session caveat</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartrsswidgets</element>
+        <type>package</type>
         <version>1.2.2</version>
 
         <addition>
